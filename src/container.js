@@ -7,7 +7,7 @@ class Container extends React.Component {
     super(props);
     this.state = {
       value: "",
-      shoutouts: ["she is cool", "she is smart", "I think she has a great butt"]
+      shoutouts: ["You are great!", "You are smart.", "When I am sad, I try to take four breaths."]
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,24 +19,21 @@ class Container extends React.Component {
 
   handleSubmit(event) {
     this.setState({
-      shoutouts: [...this.state.shoutouts, this.state.value]
+      shoutouts: [...this.state.shoutouts, this.state.value],
+      value: ""
     });
-    console.log(this.state.value);
     event.preventDefault();
+    event.target.reset();
   }
 
   render() {
     return (
       <>
-        <div className="container">
-          {" "}
-          {this.state.shoutouts.map((shoutout, index) => (
-            <Box value={shoutout} key={index} />
-          ))}
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Give yourself a shoutout! You're a badass!
+        <h1> grateful counter </h1>
+       <p className="roboto"> In a society that has you counting money, pounds, calories, and steps, be a rebel and count your blessings instead. - Lisa Heckman</p> 
+        <form onSubmit={this.handleSubmit} className="form" id="myForm">
+          <label className="label">
+            What are you grateful for today? 
             <input
               type="text"
               value={this.state.value}
@@ -45,6 +42,13 @@ class Container extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
+
+        <div className="container">
+          {" "}
+          {this.state.shoutouts.map((shoutout, index) => (
+            <Box value={shoutout} key={index} />
+          ))}
+        </div>
       </>
     );
   }

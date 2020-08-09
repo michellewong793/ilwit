@@ -1,10 +1,33 @@
 .App {
-  font-family: sans-serif;
   text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+
+.roboto {
+  font-family: 'Roboto';
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content:space-around;
+  padding:1rem;
+}
+
+.label {
+  margin-bottom:1rem;
+}
+
+.button-text {
+  font-family:'Pacfico', cursive;
+}
+
+.form {
+  height: 15rem;
+  width:15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-content: center;
+  margin: 0 auto;
 }
